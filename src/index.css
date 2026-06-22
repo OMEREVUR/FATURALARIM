@@ -549,6 +549,22 @@ textarea.input {
   white-space: pre-wrap;
 }
 
+.maps-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+  color: var(--brand);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: normal;
+}
+
+.maps-link:active {
+  opacity: 0.7;
+}
+
 /* ---------- İş öğesi ---------- */
 .job-item {
   display: flex;

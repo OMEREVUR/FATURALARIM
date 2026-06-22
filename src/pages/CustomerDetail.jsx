@@ -6,7 +6,7 @@ import JobItem from '../components/JobItem';
 import CustomerForm from '../components/CustomerForm';
 import JobForm from '../components/JobForm';
 import ConfirmDialog from '../components/ConfirmDialog';
-import { formatCurrency, telLink, whatsappLink } from '../utils/format';
+import { formatCurrency, telLink, whatsappLink, mapsLink } from '../utils/format';
 
 export default function CustomerDetail() {
   const { id } = useParams();
@@ -88,7 +88,19 @@ export default function CustomerDetail() {
             {customer.addresses.map((a) => (
               <div key={a.id} className="info-card">
                 <div className="info-card-title">{a.title || 'Adres'}</div>
-                <div className="info-card-body">{a.address}</div>
+                <div className="info-card-body">
+                  {a.address}
+                  {a.address && (
+                    <a
+                      className="maps-link"
+                      href={mapsLink(a.address)}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      📍 Haritada Aç
+                    </a>
+                  )}
+                </div>
               </div>
             ))}
           </div>
